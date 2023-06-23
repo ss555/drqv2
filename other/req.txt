@@ -1,0 +1,8 @@
+dm_control
+imageio==2.9.0
+imageio-ffmpeg==0.4.4
+opencv_python==4.5.1.48
+pandas
+hydra-core==1.1.1
+hydra-submitit-launcher==1.1.5
+plotly

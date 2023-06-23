@@ -1,0 +1,6 @@
+# pytorch command runs binaries of CUDA, so installs cu11.8 on its own
+pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+pip install stable-baselines3==1.8.0
+conda install matplotlib
+pip install dm_control
+pip install tensorboard

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="946c647f-d2fb-4c0e-b7ba-d72896763bb5" name="cin">
+        <fileTransfer rootFolder="/home/Sardor.Israilov" accessType="SFTP" host="i3s" port="22" sshConfigId="f524b624-af1d-44bb-8d23-a5a93debea24" sshConfig="Sardor.Israilov@i3s:22 key" keyPair="true">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

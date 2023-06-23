@@ -1,0 +1,5 @@
+defaults: #custom env
+  - easy
+  - _self_
+
+task_name: cartpole_balance

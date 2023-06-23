@@ -1,0 +1,6 @@
+defaults: #custom env
+  - medium
+  - _self_
+
+task_name: cartpole_balance
+lr: 8e-3

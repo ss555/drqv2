@@ -1,0 +1,36 @@
+<mujoco model="example">
+    <!-- set some defaults for units and lighting -->
+    <include file="../common/visual.xml"/>
+    <include file="../common/skybox.xml"/>
+    <include file="../common/materials.xml"/>
+    <compiler angle="degree" meshdir="./"/>
+<!--    <option gravity="0 0 -9.81"/>-->
+    <option timestep="0.02">
+        <flag contact="disable" energy="enable"/>
+    </option>
+
+    <worldbody>
+        <light name="light" pos="0 0 6"/>
+        <geom name="floor" size="3 3 .2" type="plane" pos="0 0 -2" material="grid"/>
+        <body>
+            <geom name="p1" type="capsule" rgba=".9 0 0 1" fromto="0 0 0 0 0 .5" size="0.02" mass="0.1"/>
+            <joint name="j1" type="hinge" axis="0 1 0" damping="0.05"/>
+            <geom name="s1" type="sphere" size="0.05" mass=".05"/>
+            <body>
+                <geom name="p2" type="capsule" rgba="0 .9 0 1" fromto="0 0.05 0.5 0 0.05 1" size="0.02" mass="0.1"/>
+                <joint name="j2" type="hinge" axis="0 1 0" pos="0 0 0.5" damping="0.05"/>
+                <geom name="s2" type="sphere" size="0.05" pos="0 0.05 0.5" mass=".05"/>
+                <body>
+                    <geom name="p3" type="capsule" rgba="0 0 .9 1" fromto="0 0.1 1 0 0.1 1.5" size="0.02" mass="0.1"/>
+                    <joint name="j3" type="hinge" axis="0 1 0" pos="0 0.1 1" damping="0.05"/>
+                    <geom name="s3" type="sphere" size="0.05" mass=".05" pos="0 0.1 1"/>
+                </body>
+            </body>
+        </body>
+    </worldbody>
+
+    <actuator>
+        <motor name="torque" joint="j1" gear="1" ctrlrange="-1 1" ctrllimited="true"/>
+<!--        <motor name="torque" joint="j1" gear="1" ctrlrange="-1 1" ctrllimited="false"/>-->
+    </actuator>
+</mujoco>

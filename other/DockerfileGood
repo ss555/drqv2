@@ -1,0 +1,26 @@
+# Use the official image as a parent image
+FROM test
+
+#COPY ./custom_Mujoco_tasks/.mujoco/ .mujoco
+ENV MJLIB_PATH=/root/.mujoco/bin/libmujoco210.so
+ENV MUJOCO_GL=egl
+ENV LD_LIBRARY_PATH /.mujoco/mujoco210/bin:${LD_LIBRARY_PATH}
+ENV LD_LIBRARY_PATH /usr/local/nvidia/lib64:${LD_LIBRARY_PATH}
+ENV PYOPENGL_PLATFORM=egl
+
+
+# i need this for ffmpeg
+#ENV PATH="/tf/.local/bin/:${PATH}"
+
+RUN apt-cache search mesa
+RUN apt-get update && apt-get install -y libgl1-mesa-glx libosmesa6
+
+# Run the command inside your image filesystem
+#RUN pip install --upgrade pip && \
+#        pip install gym && \
+#        pip install gym[atari] && \
+#        pip install PyOpenGL==3.1.0 && \
+#        pip install dm_control && \
+#        pip install tqdm && \
+#        pip install np_utils && \
+#        pip install opencv-python
